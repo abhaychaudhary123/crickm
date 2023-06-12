@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/app.js -e js,hbs,css",
-    "start": "pm2 start app.js"
+    "start": "pm2 start app.js --no-autorestart"
+
   },
   "keywords": [],
   "author": "",
