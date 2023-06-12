@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="devcss.css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    <title>Cricket Manager | Dev News</title>
+</head>
+<body>
+    
+
+
+<!-- grid div start -->
+<div class="grid-container">
+    <!-- Item 1 start-->
+    <div class="item1">
+        
+        <!-- start of dashboard box -->
+
+        <div class="dashboard_container">
+
+            <div class="dashboard_txt h">DASHBOARD</div>
+            <div class="dash_icon  s_alone">
+            <button><span class="material-symbols-outlined" onclick="fold()">dashboard</span></button> 
+            </div>
+
+            <!--  -->
+
+            <div class="tournament_txt s h "><a href="createTournament">Tournament</a></div>
+            <div class="tournament_txt_icon s ">
+            <a href="createTournament"><span class="material-symbols-outlined">tour</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="team_txt s h"><a href="createTeam">Create Team</a></div>
+            <div class="team_icon s">
+            <a href="createTeam"><span class="material-symbols-outlined">add</span></a>
+            </div>
+
+
+
+            <!--  -->
+
+            <div class="live_txt s h"><a href="liveMatches">Live Score</a></div>
+            <div class="live_icon s">
+            <a href="liveMatches"><span class="material-symbols-outlined">live_tv</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="matches_txt s h"><a href="fixtures">Fixtures</a></div>
+            <div class="matches_icon s">
+            <a href="fixtures"><span class="material-symbols-outlined">calendar_month</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="points_txt s h "><a href="pointsTable">Points Table</a></div>
+            <div class="points_icon s">
+            <a href="pointsTable"><span class="material-symbols-outlined">table_chart</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="standing_txt s h"><a href="playersStandings">Player Standings</a></div>
+            <div class="standing_icon s">
+            <a href="playersStandings"><span class="material-symbols-outlined">bar_chart</span></a>
+            </div>
+
+
+
+            <!--  -->
+
+            <div class="redirect_txt s h "><a href="redirectSettings">Redirect Settings</a></div>
+            <div class="redirect_icon s">
+            <a href="redirectSettings"><span class="material-symbols-outlined">forward</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="redirect_txt s h "><a href="messageUs">Message us</a></div>
+            <div class="redirect_icon s">
+            <a href="messageUs"><span class="material-symbols-outlined">chat_bubble</span></a>
+            </div>
+
+             <!--  -->
+
+            <div class="redirect_txt s h "><a href="notifications">Notifications</a></div>
+            <div class="redirect_icon s">
+            <a href="notifications"><span class="material-symbols-outlined">notifications</span></a>
+            </div>
+
+             <!--  -->
+
+            <div class="redirect_txt s h "><a href="donateUs">Donate us</a></div>
+            <div class="redirect_icon s">
+            <a href="donateUs"><span class="material-symbols-outlined">monetization_on</span></a>
+            </div>
+
+
+
+
+            <!--  -->
+
+            <div class="devupdate_txt s h active"><a href="devUpdates">Dev Updates</a></div>
+            <div class="devupdate_icon s">
+            <a href="devUpdates"><span class="material-symbols-outlined">update</span></a>
+            </div>
+
+
+             
+
+
+        </div>
+
+        <!-- End of dashboard box -->
+
+    </div>
+    <!-- item1 end -->
+    <!-- Item 2 start -->
+    <div class="item2">
+        
+        <!-- start of nav -->
+            <nav>
+                <div class="nav_grid">
+                    <div class="nav_item_1">Tournament ID : {{getDataUser.tournamentID}}</div>
+                    <div class="nav_item_2"></div>
+                    <div class="nav_item_3"></div>
+                    <div class="nav_item_4">ACTIVE USER : {{getDataUser.userName}}</div>
+                </div>
+            </nav>
+
+        <!-- End of Nav -->
+
+    </div>
+    <!-- Item 2 end -->
+    <!-- Item 3 start -->
+    <div class="item3">
+
+        <div class="points_header1" style="display: grid; grid-template-columns:auto">
+            <div style="text-align: center;font-size:2.3rem;">DEV NEWS</div>
+            <div class="news">
+                <div class="title">Developer News: Cricket Manager v1.0.0 initial release</div>
+                <div>
+                    We are thrilled to present the initial release of Cricket Manager v1.0.0! 
+                    This marks a significant milestone in our journey to bring you the ultimate
+                    cricket management experience. Let's dive into the exciting features and
+                    improvements that await you:
+                </div>
+
+                <div>
+                    <b>1. Manage Cricket Matches of Every Format (Except Test Matches)</b>
+                    With Cricket Manager, you can now organize cricket matches of various formats,
+                    including T20, F5, T10, and ODI. Experience the thrill of shorter games and
+                    intense battles on the cricket field. Showcase your strategic prowess and 
+                    lead your team to victory. Please note that currently, Test match format is not 
+                    available in Cricket Manager. However, we are continuously working to enhance the
+                    platform and aim to bring Test match format in future updates. Stay tuned for
+                    further developments!
+                </div>
+
+                <div>
+                    <b>2. Powerful Dashboard</b>
+                    We have introduced a robust dashboard that serves as your command center for managing
+                    teams, matches, and tournaments. From this centralized hub, you can access vital
+                    information, monitor live scores, view upcoming fixtures, and track the progress of teams and players.
+                </div>
+
+                <div><b>3. Tournament Creation</b></div>
+
+                <div><b>4. Team Creation and Management</b></div>
+
+                <div><b>5. Live Score Updates</b></div>
+
+                <div><b>6. Fixture Management</b></div>
+
+                <div><b>7. Points Table</b></div>
+
+                <div><b>8. Player Statistics</b></div>
+
+                <div><b>9. Redirect Settings</b></div>
+                
+                <div><b>10. Score Viewing Page</b>
+                We have also introduced a dedicated page where users can easily view live scores and updates.
+                 Stay connected to the ongoing matches and catch all the action in real-time. It's the perfect
+                  companion for cricket enthusiasts who want to stay up-to-date with the latest scores.</div>
+
+                <div><b>11. Continuous Development</b>
+                We are dedicated to consistently enhancing Cricket Manager based on your valuable feedback.
+                 Expect regular updates, exciting new features, and improvements to further enrich your cricket 
+                 management experience. Stay tuned for future developments and share your thoughts with us.</div>
+
+            </div>
+        </div>
+
+    </div> 
+    <!-- Item 3 end -->
+    <!-- Item 4 start --> 
+    <div class="item4">
+        <footer>
+            <!-- start of side footer container -->
+            <div class="footer_container">
+
+               
+    
+                <!--  -->
+    
+                <div class="acc_icon s">
+                <a href="#"><span class="material-symbols-outlined">account_circle</span></a>
+                </div>
+    
+                <!--  -->
+    
+                <div class="log_icon s">
+                <span class="material-symbols-outlined" id="logoutUser">logout</span>
+                </div>
+    
+    
+    
+                <!--  -->
+    
+                <div class="logall_icon s">
+                <span class="material-symbols-outlined" id="logoutalldevices">power_rounded</span>
+                </div>
+    
+                
+               
+                 
+    
+    
+            </div>
+            <!-- End of footer container -->
+        </footer>
+     </div>
+    <!-- Item 4 end -->
+
+</div>
+<!-- grid div end -->
+
+<script type="text/javascript" src="/logoutPassing.js"></script>
+<script type="text/javascript" src="/dev.js"></script>
+</body>
+</html>

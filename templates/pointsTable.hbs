@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pointsdesign.css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    <title>Cricket Manager | Points Table</title>
+</head>
+<body>
+    
+
+
+<!-- grid div start -->
+<div class="grid-container">
+    <!-- Item 1 start-->
+    <div class="item1">
+        
+        <!-- start of dashboard box -->
+
+        <div class="dashboard_container">
+
+            <div class="dashboard_txt h">DASHBOARD</div>
+            <div class="dash_icon  s_alone">
+            <button><span class="material-symbols-outlined" onclick="fold()">dashboard</span></button> 
+            </div>
+
+            <!--  -->
+
+            <div class="tournament_txt s h "><a href="createTournament">Tournament</a></div>
+            <div class="tournament_txt_icon s ">
+            <a href="createTournament"><span class="material-symbols-outlined">tour</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="team_txt s h"><a href="createTeam">Create Team</a></div>
+            <div class="team_icon s">
+            <a href="createTeam"><span class="material-symbols-outlined">add</span></a>
+            </div>
+
+
+
+            <!--  -->
+
+            <div class="live_txt s h"><a href="liveMatches">Live Score</a></div>
+            <div class="live_icon s">
+            <a href="liveMatches"><span class="material-symbols-outlined">live_tv</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="matches_txt s h"><a href="fixtures">Fixtures</a></div>
+            <div class="matches_icon s">
+            <a href="fixtures"><span class="material-symbols-outlined">calendar_month</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="points_txt s h active"><a href="pointsTable">Points Table</a></div>
+            <div class="points_icon s">
+            <a href="pointsTable"><span class="material-symbols-outlined">table_chart</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="standing_txt s h"><a href="playersStandings">Player Standings</a></div>
+            <div class="standing_icon s">
+            <a href="playersStandings"><span class="material-symbols-outlined">bar_chart</span></a>
+            </div>
+
+
+
+            <!--  -->
+
+            <div class="redirect_txt s h "><a href="redirectSettings">Redirect Settings</a></div>
+            <div class="redirect_icon s">
+            <a href="redirectSettings"><span class="material-symbols-outlined">forward</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="redirect_txt s h "><a href="messageUs">Message us</a></div>
+            <div class="redirect_icon s">
+            <a href="messageUs"><span class="material-symbols-outlined">chat_bubble</span></a>
+            </div>
+
+             <!--  -->
+
+            <div class="redirect_txt s h "><a href="notifications">Notifications</a></div>
+            <div class="redirect_icon s">
+            <a href="notifications"><span class="material-symbols-outlined">notifications</span></a>
+            </div>
+
+             <!--  -->
+
+            <div class="redirect_txt s h "><a href="donateUs">Donate us</a></div>
+            <div class="redirect_icon s">
+            <a href="donateUs"><span class="material-symbols-outlined">monetization_on</span></a>
+            </div>
+
+
+
+
+            <!--  -->
+
+            <div class="devupdate_txt s h"><a href="devUpdates">Dev Updates</a></div>
+            <div class="devupdate_icon s">
+            <a href="devUpdates"><span class="material-symbols-outlined">update</span></a>
+            </div>
+
+
+             
+
+
+        </div>
+
+        <!-- End of dashboard box -->
+
+    </div>
+    <!-- item1 end -->
+    <!-- Item 2 start -->
+    <div class="item2">
+        
+        <!-- start of nav -->
+            <nav>
+                <div class="nav_grid">
+                    <div class="nav_item_1">Tournament ID : {{getDataUser.tournamentID}}</div>
+                    <div class="nav_item_2"></div>
+                    <div class="nav_item_3"></div>
+                    <div class="nav_item_4">ACTIVE USER : {{getDataUser.userName}}</div>
+                </div>
+            </nav>
+
+        <!-- End of Nav -->
+
+    </div>
+    <!-- Item 2 end -->
+    <!-- Item 3 start -->
+    <div class="item3">
+        {{!-- Points Table --}}
+       <div class="all_content">
+
+            <div class="points_header">
+                <div>POINTS TABLE</div>
+            </div>
+
+            <div class="points_table"></div>
+
+       </div>
+       
+
+    </div> 
+    <!-- Item 3 end -->
+    <!-- Item 4 start --> 
+    <div class="item4">
+        <footer>
+            <!-- start of side footer container -->
+            <div class="footer_container">
+
+               
+    
+                <!--  -->
+    
+                <div class="acc_icon s">
+                <a href="#"><span class="material-symbols-outlined">account_circle</span></a>
+                </div>
+    
+                <!--  -->
+    
+                <div class="log_icon s">
+                <span class="material-symbols-outlined" id="logoutUser">logout</span>
+                </div>
+    
+    
+    
+                <!--  -->
+    
+                <div class="logall_icon s">
+                <span class="material-symbols-outlined" id="logoutalldevices">power_rounded</span>
+                </div>
+    
+                
+               
+                 
+    
+    
+            </div>
+            <!-- End of footer container -->
+        </footer>
+     </div>
+    <!-- Item 4 end -->
+
+</div>
+<!-- grid div end -->
+
+<script type="text/javascript" src="/logoutPassing.js"></script>
+<script type="text/javascript" src="/pointsjs.js"></script>
+</body>
+</html>

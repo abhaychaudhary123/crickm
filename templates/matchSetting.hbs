@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="matchsettingdesign.css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    <title>Cricket Manager | Schedule</title>
+</head>
+<body>
+    
+
+
+<!-- grid div start -->
+<div class="grid-container">
+    <!-- Item 1 start-->
+    <div class="item1">
+        
+        <!-- start of dashboard box -->
+
+        <div class="dashboard_container">
+
+            {{!-- <div class="dashboard_txt h">MATCH SETTINGS</div> --}}
+            <div class="dash_icon  s_alone">
+            <button ><span class="material-symbols-outlined" onclick="fold()">settings</span></button> 
+            </div>
+
+            <!--  -->
+
+            {{!-- <div class="points_txt s h" ><a href="#">Match Details</a></div> --}}
+            <div class="points_icon s" id="matchDetail" >
+            <a href="#" ><span class="material-symbols-outlined" >info</span></a>
+            </div>
+
+           
+            <!--  -->
+
+            {{!-- <div class="points_txt s h" ><a href="#">Teams Score</a></div> --}}
+            <div class="points_icon s" id="teamScore">
+            <a href="#"><span class="material-symbols-outlined">scoreboard</span></a>
+            </div>
+
+             <!--  -->
+
+            {{!-- <div class="points_txt s h" ><a href="#">{{ getDataUser.teamName1 }} Players</a></div> --}}
+            <div class="points_icon s" id="playersof1click">
+            <a href="#"><span class="material-symbols-outlined">groups_2</span></a>
+            </div>
+
+            <!--  -->
+
+            {{!-- <div class="points_txt s h"><a href="#">{{ getDataUser.teamName2 }} Players</a></div> --}}
+            <div class="points_icon s" id="playersof2click">
+            <a href="#"><span class="material-symbols-outlined">groups_3</span></a>
+            </div>
+
+
+            
+                 
+         </div>
+
+
+
+        <!-- End of dashboard box -->
+
+    </div>
+    <!-- item1 end -->
+    <!-- Item 2 start -->
+    <div class="item2">
+        
+        <!-- start of nav -->
+            <nav>
+                <div class="nav_grid">
+                    <div class="nav_item_1">Tournament ID : {{getDataUser.tournamentID}}</div>
+                    <div class="nav_item_2"></div>
+                    <div class="nav_item_3"></div>
+                    <div class="nav_item_4">ACTIVE USER : {{getDataUser.userName}}</div>
+                </div>
+            </nav>
+
+        <!-- End of Nav -->
+
+    </div>
+    <!-- Item 2 end -->
+    <!-- Item 3 start -->
+    <div class="item3">
+        <!-- Tournament Creation -->
+       
+        <div class="note_grid">
+                <div></div>
+                <div id="actions" style="color: black;"> Actions</div>
+        </div>
+
+{{!--  --}}
+
+        <div class="four_divs add_teams_team">
+
+                <div class="add_teams">
+                    <div class="content_tabledata " id="matchDetail_show">
+                        <div class="tournament_list create_title" id="redirect_title">MATCH DETAILS</div>
+                        
+                        <div class="tournament_list">MATCH TYPE</div>
+                        <div class="t_tilename">
+                            <select id="match_type_select" >
+                                <option class="select_design" value="{{getDataUser.matchType}}" >Default Selected : {{getDataUser.matchType}}</option>
+                                <option class="select_design" value="ODI">ODI</option>
+                                {{!-- <option class="select_design" value="TEST">TEST</option> --}}
+                                <option class="select_design" value="T20">T20</option>
+                                <option class="select_design" value="T10">T10</option>
+                                <option class="select_design" value="F5">F5</option>
+                                
+                            </select>
+                        </div>
+
+                        <div class="tournament_list">FIRST BATTING</div>
+                        <div class="t_tilename">
+                            <select id="batting_select" >
+                                <option class="select_design" value="{{getDataUser.t1id}}">{{getDataUser.teamName1}}</option>
+                                <option class="select_design" value="{{getDataUser.t2id}}">{{getDataUser.teamName2}}</option>
+                                
+                            </select>
+                        </div>
+
+                        
+                        
+                        <div class="tournament_list">MATCH NUMBER</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="matchno" value="{{getDataUser.matchno}}" placeholder="Match Number">
+                        </div>
+                        
+                        <div class="tournament_list">STADIUM NAME</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="std_name" value="{{getDataUser.stadiumName}}" placeholder="Stadium Name">
+                        </div>
+
+                        <div class="tournament_list">STADIUM LOCATION</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="std_location" value="{{getDataUser.stadiumLocation}}"  placeholder="Stadium Location">
+                        </div>
+
+                        <div class="tournament_list">SELECT DATE</div>
+                        <div class="t_tilename">
+                        <input type="date" class="input_edit" id="date"  value="{{getDataUser.date}}" >
+                        </div>
+
+                       <div class="tournament_list">SELECT TIME</div>
+                        <div class="t_tilename">
+                        <input type="time" class="input_edit" id="time" value="{{getDataUser.time}}">
+                        </div>
+
+                        <div class="tournament_list">SAVE MATCH</div>
+                        <div class="submit_btn"><button id="saveClick"> S A V E </button></div>
+                    </div>
+
+
+                    {{!-- mtch score --}}
+
+                     <div class="content_tabledata " id="teamsScore_show" style="display: none;">
+                        <div class="tournament_list create_title" id="redirect_title">TEAM SCORECARD</div>
+                        
+                        <div class="tournament_list">{{getDataUser.teamName1}} RUNS</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="t1runs" value="{{getDataUser.t1runs}}" placeholder="Runs">
+                        </div>
+                        
+                        <div class="tournament_list">{{getDataUser.teamName1}} WICKETS</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="t1wickets" value="{{getDataUser.t1wickets}}" placeholder="Wickets">
+                        </div>
+
+                        <div class="tournament_list">{{getDataUser.teamName1}} OVERS</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="t1overs" value="{{getDataUser.t1oversPlayed}}"  placeholder="Overs">
+                        </div>
+
+                        <div class="tournament_list">{{getDataUser.teamName2}} RUNS</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="t2runs" value="{{getDataUser.t2runs}}" placeholder="Runs">
+                        </div>
+                        
+                        <div class="tournament_list">{{getDataUser.teamName2}} WICKETS</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="t2wickets" value="{{getDataUser.t2wickets}}" placeholder="Wickets">
+                        </div>
+
+                        <div class="tournament_list">{{getDataUser.teamName2}} OVERS</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="t2overs" value="{{getDataUser.t2oversPlayed}}"  placeholder="Overs">
+                        </div>
+
+                        
+
+                        <div class="tournament_list">SAVE SCORE</div>
+                        <div class="submit_btn"><button id="saveScoreClick"> S A V E </button></div>
+                    </div>
+
+                     {{!-- mtch score --}}
+
+                     <div class="players_1 " id="playerof1_show" style="display: none;"></div>
+                     <div class="players_2 " id="playerof2_show" style="display: none;"></div>
+
+
+
+
+                </div>
+
+
+                <div class="schedule">
+                    <div class="schedule_data_title">CURRENT MATCH</div>
+                    <div class="schedule_data">
+
+                        
+                        {{!-- ScheduleBOX --}}
+                        {{!-- <div class="schedule_box">
+                            <div class="match_title">{{getDataUser.matchno}} • {{getDataUser.tournamentname}}</div>
+                            <div class="match_type">{{getDataUser.matchType}} • {{getDataUser.stadiumLocation}}</div>
+
+                            <div class="team1_score_flag">
+                                <div class="t1_flag">
+                                    <img id="image_fix_schedule" src="{{ getDataUser.teamFlag1 }}" alt="flag">
+                                </div>
+                                <div class="t1_name">{{ getDataUser.teamName1 }}</div>
+                                <div class="t1_score" >{{ getDataUser.t1runs }}-{{ getDataUser.t1wickets }} ({{ getDataUser.t1oversPlayed }})</div>
+                            </div>
+
+                            <div class="team1_score_flag">
+                                <div class="t1_flag">
+                                    <img id="image_fix_schedule" src="{{ getDataUser.teamFlag2 }}" alt="flag">
+                                </div>
+                                <div class="t1_name">{{ getDataUser.teamName2 }}</div>
+                                <div class="t1_score" >{{ getDataUser.t2runs }}-{{ getDataUser.t2wickets }} ({{ getDataUser.t2oversPlayed }})</div>
+                            </div>
+
+                            <div class="time_" style="color: #CCAD15;">{{getDataUser.date}}  •  {{getDataUser.time}}</div>
+
+                            <div></div>
+                            <div class="time_" style="color: #62b4f2;">{{getDataUser.mResult}}</div>
+
+                            <div class="settings">
+                                <div><a href="#">Points Table</a></div>
+                            </div>
+                        </div> --}}
+                        {{!-- scehdule box end --}}
+                    </div>
+
+                </div>
+            
+
+                <div class="match_set">
+                    <div class="more_settings">
+                    <div class="live">MATCH RESULT</div>
+                    <div class="live_buttons">
+                        <div>
+                            <select id="result_select" >
+                                <option class="select_design" value="{{getDataUser.mResult}}" >Default Selected : {{getDataUser.mResult}}</option>
+                                <option class="select_design" value="Match yet to be Started">Match yet to be Started</option>
+                                <option class="select_design" value="{{getDataUser.teamName1}} won the toss and elected to bat first">{{getDataUser.teamName1}} won the toss and elected to bat first</option>
+                                <option class="select_design" value="{{getDataUser.teamName2}} won the toss and elected to bat first">{{getDataUser.teamName2}} won the toss and elected to bat first</option>
+                                <option class="select_design" value="{{getDataUser.teamName1}} won the toss and elected to bowl first">{{getDataUser.teamName1}} won the toss and elected to bowl first</option>
+                                <option class="select_design" value="{{getDataUser.teamName2}} won the toss and elected to bowl first">{{getDataUser.teamName2}} won the toss and elected to bowl first</option>
+                                <option class="select_design" value="Match Cancelled">Match Cancelled</option>
+                                <option class="select_design" value="Match cancelled due to Rain">Match cancelled due to Rain</option>
+                                <option class="select_design" value="Innings Break">Innings Break</option>
+                                 <option class="select_design" value="Match Delayed due to Rain">Match Delayed due to Rain</option>
+                                  <option class="select_design" value="Match Delayed">Match Delayed</option>
+                            </select>
+                            <button class="design_class_3" id="setChase">Set Chase</button>
+                            
+                            <button class="design_class_3" id="save_result_click">Save</button>
+                        </div>
+                    </div>
+
+                    <div class="live">LIVE OPTIONS</div>
+                    <div class="live_buttons">
+                        <div><button class="design_class" id="live">Live</button>
+                        <button class="design_class_2" id="disable_live">Disable Live</button></div>
+                    </div>
+
+                    <div class="live">SHOW IN UPCOMING MATCHES</div>
+                    <div class="live_buttons">
+                        <div>
+                            <button class="design_class_3" id="enable_viewpage">Enable</button>
+                            <button class="design_class_2" id="disable_viewpage2">Disable</button>
+                        </div>
+                    </div>
+
+                    <div class="live">DROP MATCH</div>
+                    <div class="live_buttons">
+                        <div><button class="design_class_2" id="drop_match">DROP THIS MATCH</button></div>
+                    </div>
+
+                    <div class="live">PUSH PLAYERS (Reset and add new)</div>
+                    <div class="live_buttons">
+                        <div><button class="design_class_2" id="push_players">P U S H &nbsp; &nbsp;A G A I N</button></div>
+                    </div>
+
+                    <div class="live">DISCLOSE MATCH</div>
+                    <div class="live_buttons">
+                        <div><button class="design_class_3" id="disclose_result">Disclose Result</button></div>
+                    </div>
+
+                    <div class="live">DISCLOSE POINTS TABLE AFTER THIS MATCH</div>
+                    <div class="live_buttons">
+                        <div><button class="design_class_3" id="dis_ptcurrent">Disclose Now</button></div>
+                    </div>
+
+                    
+
+
+                    <div class="confirmation-dialog">
+                        <div class="dialog-content">
+                            <div class="dialog-message">Are you sure you want to drop this match?</div>
+                            <div class="dialog-actions">
+                            <button class="dialog-button confirm" id="delete_match">Confirm</button>
+                            <button class="dialog-button cancel">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{!-- <div class="live">SHOW IN VIEWPAGE</div>
+                    <div class="live_buttons">
+                        <div><button class="design_class" id="live">Enable</button></div>
+                        <div><button class="design_class_2" id="disable_live">Disable</button></div>
+                    </div> --}}
+
+                    {{!-- <div class="live">MAKE THIS MATCH LIVE</div>
+                    <div class="live"><button>Live</button></div>
+
+                    <div class="live">MAKE THIS MATCH LIVE</div>
+                    <div class="live"><button>Live</button></div> --}}
+
+                    </div>
+                </div>
+
+
+               
+        </div>
+
+        <div class="edit_teams" style="display: none;" >
+                    <div class="content_tabledata" id="tournamentData">
+
+                        <div class="tournament_list " id="redirect_title">EDIT PLAYER</div>
+                        <div class="tournament_list cross" >
+                            <button id="close" ><span class="material-symbols-outlined">
+                            close
+                            </span></button>
+                        </div>
+                        <div class="tournament_list" style="display: none;">MATCH ID</div>
+                        <div class="t_tilename" style="display: none;">
+                             <input type="text" class="input_edit" id="match_id"  placeholder="Match ID" disabled>
+                        </div>
+                        
+                        <div class="tournament_list" style="display: none;">PLAYER ID</div>
+                        <div class="t_tilename" style="display: none;"> 
+                            <input type="text" class="input_edit" id="player_id"  placeholder="Player ID" autocomplete="off" disabled>
+                        </div>
+
+                        <div class="tournament_list">PLAYER NAME</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="player_name"  placeholder="Player Name" autocomplete="off" disabled>
+                        </div>
+
+                        <div class="tournament_list">PLAYER RUNS</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="player_runs"  placeholder="Player Runs" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">BOWL PLAYED</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="bowl_played"  placeholder="Bowl Played" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">BOWL OVERS</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="bowling_overs_done"  placeholder="Bowling Overs Done" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">WICKET TAKEN</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="wicket_taken"  placeholder="Wicket Taken" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">RUN GIVEN IN BOWLING</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="run_given_bowling"  placeholder="Run Given in Bowling" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">PLAYER STATUS</div>
+                        <div class="t_tilename">
+                            <select id="status_select" >
+                                <option class="select_design" value="true">Playing</option>
+                                <option class="select_design" value="false">Not Playing</option>
+                            </select>
+                        </div>
+
+                        <div class="tournament_list">EDIT PLAYER</div>
+                        <div class="submit_btn"><button class="saveEditemTeam" id="savePlayerdataClick">S A V E</button></div>
+
+                    </div>
+            </div>
+
+{{!-- Team2 edit box --}}
+                <div class="edit_teams2" style="display: none;" >
+                    <div class="content_tabledata" id="tournamentData">
+
+                        <div class="tournament_list " id="redirect_title">EDIT PLAYER</div>
+                        <div class="tournament_list cross" >
+                            <button id="close2" ><span class="material-symbols-outlined">
+                            close
+                            </span></button>
+                        </div>
+                        <div class="tournament_list" style="display: none;">MATCH ID</div>
+                        <div class="t_tilename" style="display: none;">
+                             <input type="text" class="input_edit" id="match_id2"  placeholder="Match ID" disabled>
+                        </div>
+                        
+                        <div class="tournament_list" style="display: none;">PLAYER ID</div>
+                        <div class="t_tilename" style="display: none;"> 
+                            <input type="text" class="input_edit" id="player_id2"  placeholder="Player ID" autocomplete="off" disabled>
+                        </div>
+
+                        <div class="tournament_list">PLAYER NAME</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="player_name2"  placeholder="Player Name" autocomplete="off" disabled>
+                        </div>
+
+                        <div class="tournament_list">PLAYER RUNS</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="player_runs2"  placeholder="Player Runs" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">BOWL PLAYED</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="bowl_played2"  placeholder="Bowl Played" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">BOWL OVERS</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="bowling_overs_done2"  placeholder="Bowling Overs Done" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">WICKET TAKEN</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="wicket_taken2"  placeholder="Wicket Taken" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">RUN GIVEN IN BOWLING</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="run_given_bowling2"  placeholder="Run Given in Bowling" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">PLAYER STATUS</div>
+                        <div class="t_tilename">
+                            <select id="status_select2" >
+                                <option class="select_design" value="true">Playing</option>
+                                <option class="select_design" value="false">Not Playing</option>
+                            </select>
+                        </div>
+
+                        <div class="tournament_list">EDIT PLAYER</div>
+                        <div class="submit_btn"><button class="saveEditemTeam" id="savePlayerdataClick2">S A V E</button></div>
+
+                    </div>
+                </div>
+
+{{!--  --}}
+
+
+</div> 
+    <!-- Item 3 end -->
+    <!-- Item 4 start --> 
+    <div class="item4">
+        <footer>
+            <!-- start of side footer container -->
+            <div class="footer_container">
+    
+                <!--  -->
+    
+                <div class="acc_icon s">
+                <a href="#"><span class="material-symbols-outlined">account_circle</span></a>
+                </div>
+    
+                <!--  -->
+    
+                <div class="log_icon s">
+                <span class="material-symbols-outlined" id="logoutUser">logout</span>
+                </div>
+    
+                <!--  -->
+    
+                <div class="logall_icon s">
+                <span class="material-symbols-outlined" id="logoutalldevices">power_rounded</span>
+                </div>
+    
+    
+            </div>
+            <!-- End of footer container -->
+        </footer>
+     </div>
+    <!-- Item 4 end -->
+
+</div>
+<!-- grid div end -->
+
+<script type="text/javascript" src="/logoutPassing.js"></script>
+<script type="text/javascript" src="/matchsettingjs.js"></script>
+</body>
+</html>

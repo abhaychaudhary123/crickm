@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+
+html{
+    font-size: 62.5%;
+}
+
+*{
+    box-sizing: border-box;margin: 0;padding: 0;
+}
+
+
+*::selection {
+    background-color: rgb(188, 215, 236);
+}
+
+body{
+    /* display: flex; */
+    /* cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>'), auto; */
+    cursor: url('path/to/pan_tool_alt.svg'), auto;
+    /* flex-direction: column; */
+    /* height: 100vh; */background-color: #E3E6E3;
+}
+
+
+/* grid */
+
+.all_container {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    background-color: #E3E6E3;
+    grid-gap: 10px;
+    padding: 5px;
+    color: white;
+}
+
+.all_container > div {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Media query for smaller screens
+@media screen and (max-width: 768px) {
+  .no_show{
+    display: none;
+  }
+} */
+
+
+.main {
+    display: grid;
+    grid-template-columns:  auto  ;
+    /* background-color: #06a27e; */
+    grid-gap: 5px;
+    padding: 10px;
+    color: white;
+}
+
+.main > div {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+   
+}
+
+.main > .nav {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+    background-color: #06a27e; user-select: none;
+}
+
+
+.section_container {
+    display: grid;
+    grid-template-columns:  auto  auto;
+    /* background-color: #06a27e; */
+    grid-gap: 5px;
+    padding: 10px;
+    color: black;
+}
+
+.section_container > div {
+    font-size: 18px;
+    text-align: center;
+}
+
+.left_name{
+    display: grid;
+    grid-template-columns: max-content;
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    /* font-family: 'Julius Sans One', sans-serif; */
+    font-weight: bold;
+    /* color:#06A27E ; */
+    border-left: 10px solid #06a27e;
+    padding: 10px;
+    
+}
+
+.right_drop{
+    display: grid;
+    grid-template-columns: max-content max-content max-content max-content max-content max-content;
+    justify-content: right;
+    font-family: 'Roboto Condensed', sans-serif;
+    /* font-family: 'Julius Sans One', sans-serif; */
+    /* font-weight: bold; */
+    grid-gap: 1rem;
+    align-items: center;
+    align-content: center;
+}
+
+.right_drop > div{
+    padding: 1rem;
+    background-color: #4A4A4A;
+    color: white;
+    cursor: pointer;
+}
+
+
+.series {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .series .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 150px;
+    width: auto;
+    white-space: nowrap; /* Added */
+  }
+  
+  .series:hover .dropdown {
+    display: block;
+  }
+  
+  .series .dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #06A27E;
+    border: 1px solid #ccc;
+    border-top: none;
+    width: 100%; /* Added */
+    text-align: right;
+  }
+  
+  .series .dropdown ul li {
+    padding: 8px 12px;
+  }
+  
+  .series .dropdown ul li a {
+    color: #333;
+    text-decoration: none;
+    color: white;
+  }
+  
+
+
+  .teams {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .teams .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 150px;
+    width: auto;
+    white-space: nowrap; /* Added */
+  }
+  
+  .teams:hover .dropdown {
+    display: block;
+  }
+  
+  .teams .dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #06A27E;
+    border: 1px solid #ccc;
+    border-top: none;
+    width: 100%; /* Added */
+    text-align: right;
+  }
+  
+  .teams .dropdown ul li {
+    padding: 8px 12px;
+  }
+  
+  .teams .dropdown ul li a {
+    color: #333;
+    text-decoration: none;
+    color: white;
+  }
+  
+s
+  
+
+  .schedule_box{
+    display: grid;
+    grid-template-columns: auto auto ;
+    background-color: #FFFFFF;
+    grid-gap: 1rem;
+}
+
+.schedule_box > div{
+    background-color: #FFFFFF;
+    padding: 5px 10px 5px 10px;
+    font-size: 15px;
+    text-align: left;
+    /* font-weight: bold; */
+    /* box-shadow: 0px 6px 16px 0px rgba(0,0,0,0.2); */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 10px; */
+    color: black;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.schedule_box .match_type{
+    text-align: right;
+}
+
+.schedule_box .match_title{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+
+.schedule_box .team1_score_flag{
+    display: grid;
+    grid-template-columns: 30px max-content max-content;
+    background-color: #FFFFFF;
+    grid-gap: 1rem;
+    align-items: center;
+    align-content: center;
+}
+
+.schedule_box .team1_score_flag > div{
+    background-color: #FFFFFF;
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}
+
+#image_fix_schedule{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.settings{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+    margin-bottom: .8rem;
+    /* justify-content: end; */
+}
+
+#score_view{
+  background-color: #FFFFFF;
+  border:1px solid #ccc;
+  cursor: pointer;
+  padding: 3px;
+  text-decoration: none;
+  color:#CCAD15;
+}
+
+
+.all_content{
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #FFFFFF;
+  grid-gap: 10px;
+}
+
+
+.all_content > div{
+  background-color: #FFFFFF;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  color: black;
+  /* box-shadow: 0px 6px 16px 0px rgba(0,0,0,0.2); */
+  /* border: 1px solid #ccc; */
+  border-radius: 10px;
+}
+
+
+.points_header{
+  display: grid;
+  grid-template-columns: auto auto ;
+  background-color: #FFFFFF;
+  grid-gap: 10px;
+  justify-content: center;
+  font-family: 'Julius Sans One', sans-serif;
+  grid-column: 1/-1;;
+}
+
+
+.points_header > div{
+  background-color: #FFFFFF;
+  padding: 5px;
+  font-size: 2.3rem;
+  text-align: center;
+  /* box-shadow: 0px 6px 16px 0px rgba(0,0,0,0.2); */
+  /* border: 1px solid #ccc; */
+  border-radius: 10px;
+}
+
+
+
+.pointsTable {
+  display: grid;
+  grid-template-columns: min-content auto auto auto auto auto auto auto  ;
+  background-color: #FFFFFF;
+  grid-gap: 10px;
+  color: black;
+  justify-content: center;
+  justify-items: center;
+  grid-column: 1/-1;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.pointsTable > div {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  padding: 5px;
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.pointsTable img {
+  width: 100%;
+  max-width: 30px; /* Adjust the max-width value as needed */
+  height: auto;
+  margin-right: 5px;
+}
+
+
+.rankings{
+  display: grid;
+  grid-template-columns: min-content auto auto auto auto auto auto auto auto auto ;
+  background-color: #FFFFFF;
+}
+
+.rankings > div{
+  background-color: #FFFFFF;
+  padding: 5px 10px 5px 10px;
+  font-size: 14px;
+  text-align: center;
+  /* font-weight: bold; */
+  /* box-shadow: 0px 6px 16px 0px rgba(0,0,0,0.2); */
+  /* border: 1px solid #ccc; */
+  /* border-radius: 10px; */
+  color: black;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#image_fix_schedule{
+  width: 100%;
+  margin-top: 5px;
+}
+
+.standings{
+  display: grid;
+  grid-template-rows: auto  auto auto;
+  background-color: #FFFFFF;
+  color: #000000;
+   font-family: 'Julius Sans One', sans-serif;
+   font-size: 18px;
+  grid-gap: 1rem;
+  padding: 5px;
+  
+  margin-top: 1rem;
+}
+
+.standings > div {
+    margin-top: 1rem;
+    color: red;
+}
+
+
+.live-animation {
+  color: rgb(255, 25, 0);
+  animation: pulsate 1s infinite;
+}
+
+@keyframes pulsate {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}

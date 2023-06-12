@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="createTeamdesign.css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    <title>Cricket Manager | Create Team</title>
+</head>
+<body>
+    
+
+
+<!-- grid div start -->
+<div class="grid-container">
+    <!-- Item 1 start-->
+    <div class="item1">
+        
+        <!-- start of dashboard box -->
+
+        <div class="dashboard_container">
+
+            <div class="dashboard_txt h">DASHBOARD</div>
+            <div class="dash_icon  s_alone">
+            <button><span class="material-symbols-outlined" onclick="fold()">dashboard</span></button> 
+            </div>
+
+            <!--  -->
+
+            <div class="tournament_txt s h "><a href="createTournament">Tournament</a></div>
+            <div class="tournament_txt_icon s ">
+            <a href="createTournament"><span class="material-symbols-outlined">tour</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="team_txt s h active"><a href="createTeam">Create Team</a></div>
+            <div class="team_icon s">
+            <a href="createTeam"><span class="material-symbols-outlined">add</span></a>
+            </div>
+
+
+
+            <!--  -->
+
+            <div class="live_txt s h"><a href="liveMatches">Live Score</a></div>
+            <div class="live_icon s">
+            <a href="liveMatches"><span class="material-symbols-outlined">live_tv</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="matches_txt s h"><a href="fixtures">Fixtures</a></div>
+            <div class="matches_icon s">
+            <a href="fixtures"><span class="material-symbols-outlined">calendar_month</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="points_txt s h"><a href="pointsTable">Points Table</a></div>
+            <div class="points_icon s">
+            <a href="pointsTable"><span class="material-symbols-outlined">table_chart</span></a>
+            </div>
+
+            <!--  -->
+
+            <div class="standing_txt s h"><a href="playersStandings">Player Standings</a></div>
+            <div class="standing_icon s">
+            <a href="playersStandings"><span class="material-symbols-outlined">bar_chart</span></a>
+            </div>
+
+
+
+            <!--  -->
+
+            <div class="redirect_txt s h "><a href="redirectSettings">Redirect Settings</a></div>
+            <div class="redirect_icon s">
+            <a href="redirectSettings"><span class="material-symbols-outlined">forward</span></a>
+            </div>
+
+<!--  -->
+
+            <div class="redirect_txt s h "><a href="messageUs">Message us</a></div>
+            <div class="redirect_icon s">
+            <a href="messageUs"><span class="material-symbols-outlined">chat_bubble</span></a>
+            </div>
+
+             <!--  -->
+
+            <div class="redirect_txt s h "><a href="notifications">Notifications</a></div>
+            <div class="redirect_icon s">
+            <a href="notifications"><span class="material-symbols-outlined">notifications</span></a>
+            </div>
+
+             <!--  -->
+
+            <div class="redirect_txt s h "><a href="donateUs">Donate us</a></div>
+            <div class="redirect_icon s">
+            <a href="donateUs"><span class="material-symbols-outlined">monetization_on</span></a>
+            </div>
+
+
+
+            <!--  -->
+
+            <div class="devupdate_txt s h"><a href="devUpdates">Dev Updates</a></div>
+            <div class="devupdate_icon s">
+            <a href="devUpdates"><span class="material-symbols-outlined">update</span></a>
+            </div>
+
+
+             
+
+
+        </div>
+
+        <!-- End of dashboard box -->
+
+    </div>
+    <!-- item1 end -->
+    <!-- Item 2 start -->
+    <div class="item2">
+        
+        <!-- start of nav -->
+            <nav>
+                <div class="nav_grid">
+                    <div class="nav_item_1">Tournament ID : {{getDataUser.tournamentID}}</div>
+                    <div class="nav_item_2"></div>
+                    <div class="nav_item_3"></div>
+                    <div class="nav_item_4">ACTIVE USER : {{getDataUser.userName}}</div>
+                </div>
+            </nav>
+
+        <!-- End of Nav -->
+
+    </div>
+    <!-- Item 2 end -->
+    <!-- Item 3 start -->
+    <div class="item3">
+        <!-- Tournament Creation -->
+       
+        <div class="note_grid">
+                <div><button class="go_back" style="display: none;">Go Back</button></div>
+                <div id="actions" style="color: black;"> Actions</div>
+        </div>
+
+{{!-- 4 item containers and start of add teams --}}
+
+        <div class="four_divs add_teams_team">
+
+                <div class="add_teams">
+                    <div class="content_tabledata" id="tournamentData">
+                        <div class="tournament_list create_title" id="redirect_title">CREATE TEAM</div>
+                        
+                        
+                        
+                        <div class="tournament_list">TEAM NAME</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="name_team"  placeholder="Team Name">
+                        </div>
+                        <div class="tournament_list">TEAM FLAG LINK</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="flag_team"  placeholder="Team Flag Link">
+                        </div>
+                        <div class="tournament_list">ADD TEAM</div>
+                        <div class="submit_btn"><button id="saveClick">Add Team</button></div>
+                    </div>
+                </div>
+
+
+                <div class="teams_data">
+                    <div class="teamsData"></div>
+                </div>
+            
+
+                <div class="edit_teams" style="display: none;">
+                    <div class="content_tabledata" id="tournamentData">
+
+                        <div class="tournament_list " id="redirect_title">EDIT TEAM</div>
+                        <div class="tournament_list cross" >
+                            <button id="close" ><span class="material-symbols-outlined">
+                            close
+                            </span></button>
+                        </div>
+                        <div class="tournament_list">TEAM ID</div>
+                        <div class="t_tilename">
+                             <input type="text" class="input_edit" id="team_id_edit"  placeholder="Team ID" disabled>
+                        </div>
+                        
+                        <div class="tournament_list">TEAM NAME</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="team_name_edit"  placeholder="Team Name" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">TEAM FLAG LINK</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="team_flag_edit"  placeholder="Team Flag Link" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">EDIT TEAM</div>
+                        <div class="submit_btn"><button class="saveEditemTeam" id="saveClick">Save</button></div>
+
+                    </div>
+                </div>
+
+
+                {{!-- view players --}}
+                <div class="players_view" style="display: none;" >
+                    <div class="viewPlayers_content" id="tournamentData" >
+
+                        <div class="tournament_list " id="redirect_title">VIEW PLAYERS</div>
+                        <div class="tournament_list cross_btn" >
+                            <button id="close_players" ><span class="material-symbols-outlined">
+                            close
+                            </span></button>
+                        </div>
+                        <div class="tournament_list">FLAG</div>
+                        
+                        <div class="tournament_list">TEAM</div>
+
+                        <div class="tournament_list">PLAYERS</div>
+
+                        <div class="tournament_list">ROLE</div>
+
+                    </div>
+                </div>
+
+        </div>
+{{!-- End of add teams --}}
+
+
+{{!-- Start of add players --}}
+
+{{!-- 4 item containers --}}
+
+        <div class="add_players_teams" style="display: none;">
+
+            <div class="add_players">
+                <div class="content_addplayer" id="tournamentData">
+                        <div class="tournament_list" id="redirect_title">ADD PLAYERS</div>
+                        <div style="text-align: left;color:green" ></div>
+
+                        <div class="tournament_list">TEAM NAME</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="get_team"  placeholder="Team Name" disabled>
+                        </div>
+
+                        
+                        <div class="tournament_list">TEAM ID</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="teamid"  placeholder="Team ID" disabled>
+                        </div>
+
+                        <div class="tournament_list">PLAYER NAME</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="pname"  placeholder="Player Name">
+                        </div>
+                        <div class="tournament_list">SELECT PLAYER ROLE</div>
+                        
+                        <div class="select_options">
+                            <input type="radio" id="batsman" name="role" value="Batsman">
+                            <label for="batsman">Batsman</label>
+
+                            <input type="radio" id="bowler" name="role" value="Bowler">
+                            <label for="bowler">Bowler</label>
+
+                            <input type="radio" id="all-rounder" name="role" value="All Rounder">
+                            <label for="all-rounder">All Rounder</label>
+
+                        </div>
+
+                        <div class="tournament_list">ADD PLAYER</div>
+                        <div class="submit_btn"><button id="savePlayers" >Add Player</button></div>
+
+                </div>
+
+                {{!-- Player data --}}
+                <div class="teams_data">
+                    <div class="playerdata"></div>
+                </div>
+
+                {{!-- Edit Players --}}
+
+                <div class="edit_player" style="display:none">
+                    <div class="content_playeredit" id="tournamentData">
+
+                        <div class="tournament_list " id="redirect_title">EDIT PLAYER</div>
+                        <div class="tournament_list cross_editPlayers" >
+                            <button id="close_playersedit" ><span class="material-symbols-outlined">
+                            close
+                            </span></button>
+                        </div>
+                        <div class="tournament_list">PLAYER ID</div>
+                        <div class="t_tilename">
+                             <input type="text" class="input_edit" id="player_id_edit"  placeholder="Player ID" disabled>
+                        </div>
+                        
+                        <div class="tournament_list">PLAYER NAME</div>
+                        <div class="t_tilename">
+                            <input type="text" class="input_edit" id="player_name_edit"  placeholder="Player Name" autocomplete="off">
+                        </div>
+
+                        <div class="tournament_list">ROLE</div>
+                        <div class="select_options">
+                            <input type="radio" id="batsman1" name="role1" value="Batsman">
+                            <label for="batsman1">Batsman</label>
+
+                            <input type="radio" id="bowler1" name="role1" value="Bowler">
+                            <label for="bowler1">Bowler</label>
+
+                            <input type="radio" id="all-rounder1" name="role1" value="All Rounder">
+                            <label for="all-rounder1">All Rounder</label>
+
+                        </div>
+
+                        <div class="tournament_list">EDIT TEAM</div>
+                        <div class="submit_btn"><button class="savePlayers_tp" id="savePlayers_team">Save</button></div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+{{!-- End of add players --}}
+
+</div> 
+    <!-- Item 3 end -->
+    <!-- Item 4 start --> 
+    <div class="item4">
+        <footer>
+            <!-- start of side footer container -->
+            <div class="footer_container">
+
+               
+    
+                <!--  -->
+    
+                <div class="acc_icon s">
+                <a href="#"><span class="material-symbols-outlined">account_circle</span></a>
+                </div>
+    
+                <!--  -->
+    
+                <div class="log_icon s">
+                <span class="material-symbols-outlined" id="logoutUser">logout</span>
+                </div>
+    
+    
+    
+                <!--  -->
+    
+                <div class="logall_icon s">
+                <span class="material-symbols-outlined" id="logoutalldevices">power_rounded</span>
+                </div>
+    
+                
+               
+                 
+    
+    
+            </div>
+            <!-- End of footer container -->
+        </footer>
+     </div>
+    <!-- Item 4 end -->
+
+</div>
+<!-- grid div end -->
+
+<script type="text/javascript" src="/logoutPassing.js"></script>
+<script type="text/javascript" src="/createTeamjs.js"></script>
+</body>
+</html>
