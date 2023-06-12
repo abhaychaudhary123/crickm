@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon src/app.js -e js,hbs,css",
-    "start": "pm2 start app.js"
+    "start": "pm2 start app.js --no-autorestart"
+
   },
   "license": "ISC",
   "dependencies": {
