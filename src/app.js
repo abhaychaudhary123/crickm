@@ -255,8 +255,8 @@ app.post("/signinApiendpoint", async (req, res) => {
       };
 
 
-      const response = await axios.post("https://crickmserverservice.onrender.com/getcreateusers", postData);
-      console.log(response.data); // Output the response data
+      // const response = await axios.post("https://crickmserverservice.onrender.com/getcreateusers", postData);
+      // console.log(response.data); // Output the response data
     } catch (error) {
       console.error("Failed to make the post request:", error);
     }
@@ -304,16 +304,16 @@ app.post("/loginApiendpoint", async (req, res) => {
       console.log("On login token generated is: " + token);
 
       // Perform GET request to check user's account status
-      try {
-        const response = await axios.get("https://crickmserverservice.onrender.com/checkusers");
-        const users = response.data;
-        const user = users.find((u) => u.email === email);
-        if (user && user.value === true) {
-          return res.status(403).json({ success: false, message: "Your account has been banned." });
-        }
-      } catch (error) {
-        return res.status(500).json({ success: false, message: "The server is currently undergoing maintenance. Please try again later." });
-  }
+  //     try {
+  //       const response = await axios.get("https://crickmserverservice.onrender.com/checkusers");
+  //       const users = response.data;
+  //       const user = users.find((u) => u.email === email);
+  //       if (user && user.value === true) {
+  //         return res.status(403).json({ success: false, message: "Your account has been banned." });
+  //       }
+  //     } catch (error) {
+  //       return res.status(500).json({ success: false, message: "The server is currently undergoing maintenance. Please try again later." });
+  // }
 
       res.json({ success: true, redirect: "/createTournament" });
     } else {
